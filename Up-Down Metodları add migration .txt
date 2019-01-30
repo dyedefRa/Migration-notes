@@ -1,0 +1,15 @@
+  public override void Up()
+        {
+            RenameColumn("Teams", "Ad", "Name");
+            
+        }
+        
+        public override void Down()
+        {
+            RenameColumn("Teams", "Name", "Ad");
+        }
+
+//Rename Yaparak veri kaybetmemeye yarýyor
+ve bunun gibi bir çok metod var 
+
+https://stackoverflow.com/questions/13296996/entity-framework-migrations-renaming-tables-and-columns

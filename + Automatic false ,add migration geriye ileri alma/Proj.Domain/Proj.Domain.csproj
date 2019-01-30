@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{808A8DD6-1D35-4C21-886C-0E3E06488A1B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Proj.Domain</RootNamespace>
+    <AssemblyName>Proj.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Country.cs" />
+    <Compile Include="FutbolContext.cs" />
+    <Compile Include="Migrations\201810042143375_CreateTeamTable.cs" />
+    <Compile Include="Migrations\201810042143375_CreateTeamTable.Designer.cs">
+      <DependentUpon>201810042143375_CreateTeamTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810042155025_CreatePlayerTable.cs" />
+    <Compile Include="Migrations\201810042155025_CreatePlayerTable.Designer.cs">
+      <DependentUpon>201810042155025_CreatePlayerTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810042156452_createPlayerTable2.cs" />
+    <Compile Include="Migrations\201810042156452_createPlayerTable2.Designer.cs">
+      <DependentUpon>201810042156452_createPlayerTable2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810042200474_Add-Players-on-TableTeam.cs" />
+    <Compile Include="Migrations\201810042200474_Add-Players-on-TableTeam.Designer.cs">
+      <DependentUpon>201810042200474_Add-Players-on-TableTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810042215350_CreatePlayerAddress.cs" />
+    <Compile Include="Migrations\201810042215350_CreatePlayerAddress.Designer.cs">
+      <DependentUpon>201810042215350_CreatePlayerAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810042231490_CreateSponsor.cs" />
+    <Compile Include="Migrations\201810042231490_CreateSponsor.Designer.cs">
+      <DependentUpon>201810042231490_CreateSponsor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810042240526_ONEMLI.cs" />
+    <Compile Include="Migrations\201810042240526_ONEMLI.Designer.cs">
+      <DependentUpon>201810042240526_ONEMLI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810042251395_CreateCountry.cs" />
+    <Compile Include="Migrations\201810042251395_CreateCountry.Designer.cs">
+      <DependentUpon>201810042251395_CreateCountry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810042252429_CreateCountry2.cs" />
+    <Compile Include="Migrations\201810042252429_CreateCountry2.Designer.cs">
+      <DependentUpon>201810042252429_CreateCountry2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810042259114_Team-Country-Iliski.cs" />
+    <Compile Include="Migrations\201810042259114_Team-Country-Iliski.Designer.cs">
+      <DependentUpon>201810042259114_Team-Country-Iliski.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="PlayerAddress.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sponsor.cs" />
+    <Compile Include="Team.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201810042143375_CreateTeamTable.resx">
+      <DependentUpon>201810042143375_CreateTeamTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810042155025_CreatePlayerTable.resx">
+      <DependentUpon>201810042155025_CreatePlayerTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810042156452_createPlayerTable2.resx">
+      <DependentUpon>201810042156452_createPlayerTable2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810042200474_Add-Players-on-TableTeam.resx">
+      <DependentUpon>201810042200474_Add-Players-on-TableTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810042215350_CreatePlayerAddress.resx">
+      <DependentUpon>201810042215350_CreatePlayerAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810042231490_CreateSponsor.resx">
+      <DependentUpon>201810042231490_CreateSponsor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810042240526_ONEMLI.resx">
+      <DependentUpon>201810042240526_ONEMLI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810042251395_CreateCountry.resx">
+      <DependentUpon>201810042251395_CreateCountry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810042252429_CreateCountry2.resx">
+      <DependentUpon>201810042252429_CreateCountry2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810042259114_Team-Country-Iliski.resx">
+      <DependentUpon>201810042259114_Team-Country-Iliski.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

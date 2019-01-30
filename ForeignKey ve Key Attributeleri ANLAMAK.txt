@@ -1,0 +1,41 @@
+ForeignKey Attributesi ve Key Attributesi
+-1-1 iliþkilerde Örneðin Futbolcu ve Adres tablolarýný ele alalým.
+-Her Futbolcunun bir adresi ve her Adres bir futbolcuya ait olmalý.
+-Futbol.cs olusturuken proplarýný yazýp alta 
+prop Adres adres {get;set;} propertisini attýk .Ayný sekýldede Adres.cs de 
+prop Futbol futbolcu {get;set;} yazdýk . Birebiri oluþturduk fakat arada bir Id olayý yok.
+Yaný ya Futbol.cs de public int AdresID olmalý yada Adres.cs de public int FutbolcuID olmalý.
+Adres.cs de FutbolcuID olmasý daha mantýklý.
+**Bunun için Adress.cs de 
+
+  [ForeingKey("Futbolcu")]   
+
+public int FutbolcuID {get;set;}
+//burada diger proplar
+public Futbolcu Futbol {get;set;}
+
+*Ayrýca egerki Adres.cs sýnýfýnýn proplarýnda ona ozel ID si yoksa ForeignKey in yanýna Key attrbiutesýný koy.
+
+Futbol.cs de sadece
+
+public Adress Adresi {get;set;}
+//burada diger proplar
+
+--------------------------------------
+ ONE-TO-MANY tablolarýnda foreignKey yazmadan bir iliþki oluþturur.
+Örn : Yazar Kitap için 
+Her yazarýn birden çok kitabý olur ve her kitabýn bir yazarý olur
+
+Yazar.cs
+public ICollection<Kitap> Kitap {get;set;}
+//baþka proplar
+
+Kitap.cs
+public Yazar Yazar {get;set;}
+//baþka proplar
+
+dersek oto olarak kitap.cs ye yazar_Id adlý prop olusturacak Sqlde.
+Biz bunun isminin boyle olmasýný ýstemezsek
+Kitap.cs ye ek olarak
+[ForeignKey("Yazar")]
+ public int YazarID {get;set;} demeliyiz.

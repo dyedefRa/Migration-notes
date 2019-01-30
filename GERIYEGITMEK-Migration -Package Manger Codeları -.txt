@@ -1,0 +1,16 @@
+
+update-database -targetMigration:CreateTeamTable €€
+
+tekrardan guncel hali için => update-database €€
+
+Bu arada tek tek migration ekleyerek git..
+
+----------------
+add-migration CreateCountry dedik  yani yeni bir tablo oluþturmuþtuk Country.cs adýnda ve yanlýþlýkla CodeFirst ile bir baðlantýsýný yapmamýþýz
+(Contexte public  DbSet<Country> Countries {get;set} dememiþiz yada herhangi bir classla baðlantý kurmamýþýz) .Bomboþ bir migration geldi.
+Baðlantýyý kurduk ve ayný isimle migration oluþturmak istiyorum 
+ => add-migration CreateCountry --Force
+
+-----------------------
+cls => € Package Console yi temizler
+------------------------
